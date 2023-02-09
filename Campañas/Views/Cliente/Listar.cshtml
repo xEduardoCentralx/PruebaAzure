@@ -1,0 +1,135 @@
+﻿@model List<ClienteModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*El administrador podrá hacer cualquer tipo de movimiento (Agregar, editar o eliminar a un cliente
+  El Super usuario podrá agregar agregar o editar al cliente
+    El empleado solo podrá agregar clientes nuevos
+    De igual manera, el acceso a las vistas valida el uso de los roles.
+*@
+
+<div class="card">
+    <div class="card-header">
+        <h3>Clientes</h3>
+    </div>
+    @if (User.IsInRole("Administrador"))
+    {        
+        <div class="card-body">
+        <a asp-action="Guardar" asp-controller="Cliente" class="btn btn-success"><i class="bi bi-plus-circle"></i> Registrar nuevo cliente</a>
+        <br/>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido paterno</th>
+                    <th>Apellido materno</th>
+                    <th>Empresa</th>
+                    <th>Tipo de movimiento</th>
+                    <th>Fecha de actualizacion</th>
+                    <th>Empleado responsable</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @*Usamos el foreach para poder integrar todos los datos del modelo*@
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.idCliente</td>
+                        <td>@item.nombre</td>
+                        <td>@item.apPaterno</td>
+                        <td>@item.apMaterno</td>
+                        <td>@item.empresa</td>
+                        <td>@item.tipo</td>
+                        <td>@item.fecha</td>
+                        <td>@item.idEmpleado</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Cliente" class="btn btn-warning" asp-route-id="@item.idCliente"><i class="bi bi-pencil"></i> Editar</a>
+                            <a asp-action="Eliminar" asp-controller="Cliente" class="btn btn-danger" asp-route-id="@item.idCliente"><i class="bi bi-trash3"></i> Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    }
+    @if (User.IsInRole("Super usuario"))
+    {
+        <div class="card-body">
+            <a asp-action="Guardar" asp-controller="Cliente" class="btn btn-success"><i class="bi bi-plus-circle"></i> Registrar nuevo cliente</a>
+            <br />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido paterno</th>
+                        <th>Empresa</th>
+                        <th>Tipo de movimiento</th>
+                        <th>Fecha de actualizacion</th>
+                        <th>Empleado responsable</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.idCliente</td>
+                            <td>@item.nombre</td>
+                            <td>@item.apPaterno</td>
+                            <td>@item.empresa</td>
+                            <td>@item.tipo</td>
+                            <td>@item.fecha</td>
+                            <td>@item.idEmpleado</td>
+                            <td>
+                                <a asp-action="Editar" asp-controller="Cliente" class="btn btn-warning" asp-route-id="@item.idCliente"><i class="bi bi-pencil"></i> Editar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    }
+    @if (User.IsInRole("Empleado"))
+    {
+        <div class="card-body">
+            <a asp-action="Guardar" asp-controller="Cliente" class="btn btn-success"><i class="bi bi-plus-circle"></i> Registrar nuevo cliente</a>
+            <br />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido paterno</th>
+                        <th>Empresa</th>
+                        <th>Tipo de movimiento</th>
+                        <th>Fecha de actualizacion</th>
+                        <th>Empleado responsable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.idCliente</td>
+                            <td>@item.nombre</td>
+                            <td>@item.apPaterno</td>
+                            <td>@item.empresa</td>
+                            <td>@item.tipo</td>
+                            <td>@item.fecha</td>
+                            <td>@item.idEmpleado</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    }
+</div>
+
+

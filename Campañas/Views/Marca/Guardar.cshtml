@@ -1,0 +1,45 @@
+﻿@model MarcaModel
+@{
+    ViewData["Title"] = "Guardar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Nueva marca</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="Guardar" asp-controller="Marca" method="post">
+            <div class="mb-3">
+                <label class="form-label">Nombre de la marca</label>
+                <input asp-for="nombre" type="text" class="form-control">
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tipo de movimiento</label>
+                <span asp-validation-for="tipo" class="text-danger"></span>
+                <select class="form-select" asp-for="tipo">
+                    <option selected>---</option>
+                    <option value="Creacion">Creacion de nueva marca</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha de modificacion</label>
+                <input asp-for="fecha" type="date" class="form-control">
+                <span asp-validation-for="fecha" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Id cliente responsable</label>
+                <input asp-for="idCliente" type="number" class="form-control">
+                <span asp-validation-for="idCliente" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ingresa tu id</label>
+                <input asp-for="idEmpleado" type="number" class="form-control">
+                <span asp-validation-for="idEmpleado" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear marca</button>
+        </form>
+    </div>
+</div>
+

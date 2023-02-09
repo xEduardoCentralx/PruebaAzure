@@ -1,0 +1,237 @@
+﻿@model List<PAjustadoModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    decimal? ene = 0, feb = 0, mar = 0, abr = 0, may = 0, jun = 0, jul = 0, ago = 0, sep = 0, oct = 0,  nov = 0,  dic = 0;
+    decimal? evento = 0, total = 0, ef = 0, ma = 0, mj = 0, ja = 0, so = 0, nd = 0;
+}
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1>Presupuesto ajustado</h1>
+        </div>
+        @if(User.IsInRole("Administrador, Super usuario")){
+            <div>
+                <div class="card-body">
+                    <style>
+                        .table_wrapper {
+                            display: block;
+                            overflow-x: auto;
+                            white-space: nowrap;
+                        }
+                    </style>
+                    <a asp-action="Guardar" asp-controller="PAjustado" class="btn btn-success"><i class="bi bi-plus-circle"></i> Agregar herramienta nueva</a>
+                    <table class="table table-bordered table_wrapper" id="presupuesto">
+                        <thead>
+                            <tr>
+                                <th>Herramienta</th>
+                                <th>Enero</th>
+                                <th>Febrero</th>
+                                <th>Marzo</th>
+                                <th>Abril</th>
+                                <th>Mayo</th>
+                                <th>Junio</th>
+                                <th>Julio</th>
+                                <th>Agosto</th>
+                                <th>Septiembre</th>
+                                <th>Octubre</th>
+                                <th>Noviembre</th>
+                                <th>Diciembre</th>
+                                <th>S.Evento</th>
+                                <th>Modificaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--Usamos el foreach para poder integrar todos los datos del modelo  -->
+                            @foreach (var item in Model)
+                            {
+                                ene = ene + item.Enero;
+                                feb = feb + item.Febrero;
+                                mar = mar + item.Marzo;
+                                abr = abr + item.Abril;
+                                may = may + item.Mayo;
+                                jun = jun + item.Junio;
+                                jul = jul + item.Julio;
+                                ago = ago + item.Agosto;
+                                sep = sep + item.Septiembre;
+                                oct = oct + item.Octubre;
+                                nov = nov + item.Noviembre;
+                                dic = dic + item.Diciembre;
+                                evento = evento + item.SEvento;
+                                ef = ene + feb;
+                                ma = mar + abr;
+                                mj = may + jun;
+                                ja = jul + ago;
+                                so = sep + oct;
+                                nd = nov + dic;
+                                total = ef + ma + mj + ja + so + nd + evento;
+                                <tr>
+                                     <td align ="center" >@item.Herramienta</td>
+                                     <td align="center">$@item.Enero</td>
+                                     <td align="center">$@item.Febrero</td>
+                                     <td align="center">$@item.Marzo</td>
+                                     <td align="center">$@item.Abril</td>
+                                     <td align="center">$@item.Mayo</td>
+                                     <td align="center">$@item.Junio</td>
+                                     <td align="center">$@item.Julio</td>
+                                     <td align="center">$@item.Agosto</td>
+                                     <td align="center">$@item.Septiembre</td>
+                                     <td align="center">$@item.Octubre</td>
+                                     <td align="center">$@item.Noviembre</td>
+                                     <td align="center">$@item.Diciembre</td>
+                                     <td align="center">$@item.SEvento</td>
+                                     <td align="center">
+                                        <a asp-action="Editar" asp-controller="PAjustado" class="btn btn-warning" asp-route-id="@item.idHerramienta"><i class="bi bi-pencil"></i> Editar presupuestos</a>
+                                        <a asp-action="Eliminar" asp-controller="PAjustado" class="btn btn-danger" asp-route-id="@item.idHerramienta"><i class="bi bi-trash3"></i> Eliminar herramienta</a>
+                                     </td>
+                                </tr>
+                            }
+                                <tr><td colspan="15"></td></tr>
+                            <tr>
+                                <td align="center">Totales</td>
+                                <td align="center">$@ene</td>
+                                <td align="center">$@feb</td>
+                                <td align="center">$@mar</td>
+                                <td align="center">$@abr</td>
+                                <td align="center">$@may</td>
+                                <td align="center">$@jun</td>
+                                <td align="center">$@jul</td>
+                                <td align="center">$@ago</td>
+                                <td align="center">$@sep</td>
+                                <td align="center">$@oct</td>
+                                <td align="center">$@nov</td>
+                                <td align="center">$@dic</td>
+                                <td align="center">$@evento</td>
+                                <td align="center"><b>TOTAL: $@total</b></td>
+                            </tr>
+                            <tr><td colspan="15"></td></tr>
+                            <tr>
+                                <td align="center">BIMESTRES</td>
+                                <td colspan="2" align="center">$ @ef</td>
+                                    <td colspan="2" align="center">$ @ma</td>
+                                    <td colspan="2" align="center">$ @mj</td>
+                                    <td colspan="2" align="center">$ @ja</td>
+                                    <td colspan="2" align="center">$ @so</td>
+                                    <td colspan="2" align="center">$ @nd</td>
+                                    <td align="center">$ @evento</td>
+                                    <td></td>
+                            </tr>
+                         </tbody>
+                     </table>
+                 </div>
+            </div>
+        }
+        
+        @if (User.IsInRole("Empleado"))
+        {
+            <div>
+                <div class="card-body">
+                    <style>
+                        .table_wrapper {
+                            display: block;
+                            overflow-x: auto;
+                            white-space: nowrap;
+                        }
+                    </style>
+                    <a asp-action="Guardar" asp-controller="PAjustado" class="btn btn-success"><i class="bi bi-plus-circle"></i> Agregar herramienta nueva</a>
+                    <table class="table table-bordered table_wrapper" id="presupuesto">
+                        <thead>
+                            <tr>
+                                <th>Herramienta</th>
+                                <th>Enero</th>
+                                <th>Febrero</th>
+                                <th>Marzo</th>
+                                <th>Abril</th>
+                                <th>Mayo</th>
+                                <th>Junio</th>
+                                <th>Julio</th>
+                                <th>Agosto</th>
+                                <th>Septiembre</th>
+                                <th>Octubre</th>
+                                <th>Noviembre</th>
+                                <th>Diciembre</th>
+                                <th>S.Evento</th>
+                                <th>Modificaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--Usamos el foreach para poder integrar todos los datos del modelo  -->
+                            @foreach (var item in Model)
+                            {
+                                ene = ene + item.Enero;
+                                feb = feb + item.Febrero;
+                                mar = mar + item.Marzo;
+                                abr = abr + item.Abril;
+                                may = may + item.Mayo;
+                                jun = jun + item.Junio;
+                                jul = jul + item.Julio;
+                                ago = ago + item.Agosto;
+                                sep = sep + item.Septiembre;
+                                oct = oct + item.Octubre;
+                                nov = nov + item.Noviembre;
+                                dic = dic + item.Diciembre;
+                                evento = evento + item.SEvento;
+                                ef = ene + feb;
+                                ma = mar + abr;
+                                mj = may + jun;
+                                ja = jul + ago;
+                                so = sep + oct;
+                                nd = nov + dic;
+                                total = ene + feb + mar + abr + may + jun + jul + ago + sep + oct + nov + dic + evento;
+                                <tr>
+                                    <td align="center">@item.Herramienta</td>
+                                    <td align="center">$@item.Enero</td>
+                                    <td align="center">$@item.Febrero</td>
+                                    <td align="center">$@item.Marzo</td>
+                                    <td align="center">$@item.Abril</td>
+                                    <td align="center">$@item.Mayo</td>
+                                    <td align="center">$@item.Junio</td>
+                                    <td align="center">$@item.Julio</td>
+                                    <td align="center">$@item.Agosto</td>
+                                    <td align="center">$@item.Septiembre</td>
+                                    <td align="center">$@item.Octubre</td>
+                                    <td align="center">$@item.Noviembre</td>
+                                    <td align="center">$@item.Diciembre</td>
+                                    <td align="center">$@item.SEvento</td>
+                                    <td align="center">
+                                        <a asp-action="Editar" asp-controller="PAjustado" class="btn btn-warning" asp-route-id="@item.idHerramienta"><i class="bi bi-pencil"></i> Editar presupuestos</a>
+                                    </td>
+                                </tr>
+                            }
+                            <tr><td colspan="15"></td></tr>
+                            <tr>
+                                <td align="center">Totales</td>
+                                <td align="center">$@ene</td>
+                                <td align="center">$@feb</td>
+                                <td align="center">$@mar</td>
+                                <td align="center">$@abr</td>
+                                <td align="center">$@may</td>
+                                <td align="center">$@jun</td>
+                                <td align="center">$@jul</td>
+                                <td align="center">$@ago</td>
+                                <td align="center">$@sep</td>
+                                <td align="center">$@oct</td>
+                                <td align="center">$@nov</td>
+                                <td align="center">$@dic</td>
+                                <td align="center">$@evento</td>
+                                <td align="center"><b>TOTAL: $@total</b></td>
+                            </tr>
+                            <tr><td colspan="15"></td></tr>
+                            <tr>
+                                <td align="center">BIMESTRES</td>
+                                <td colspan="2" align="center">$ @ef</td>
+                                <td colspan="2" align="center">$ @ma</td>
+                                <td colspan="2" align="center">$ @mj</td>
+                                <td colspan="2" align="center">$ @ja</td>
+                                <td colspan="2" align="center">$ @so</td>
+                                <td colspan="2" align="center">$ @nd</td>
+                                <td align="center">$ @evento</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</body>

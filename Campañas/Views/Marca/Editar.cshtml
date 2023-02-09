@@ -1,0 +1,46 @@
+﻿@model MarcaModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Marca empleado</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Marca" method="post">
+            <input asp-for="idMarca" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="nombre" type="text" class="form-control">
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tipo de movimiento</label>
+                <span asp-validation-for="tipo" class="text-danger"></span>
+                <select class="form-select" asp-for="tipo">
+                    <option selected>---</option>
+                    <option value="Actualizacion">Actualizacion de marca</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha del movimiento</label>
+                <input asp-for="fecha" type="date" class="form-control">
+                <span asp-validation-for="fecha" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">ID cliente responsable</label>
+                <input asp-for="idCliente" type="number" class="form-control">
+                <span asp-validation-for="idCliente" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ingresa tu id</label>
+                <input asp-for="idEmpleado" type="number" class="form-control">
+                <span asp-validation-for="idEmpleado" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-warning"><i class="bi bi-arrow-clockwise"></i> Marca cuenta</button>
+        </form>
+    </div>
+</div>
+

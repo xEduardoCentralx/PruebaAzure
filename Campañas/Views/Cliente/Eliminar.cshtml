@@ -1,0 +1,39 @@
+﻿@model ClienteModel
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h3>Eliminar cliente</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="Cliente" method="post">
+            <input asp-for="idCliente" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="nombre" type="text" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido paterno</label>
+                <input asp-for="apPaterno" type="text" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="apPaterno" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido materno</label>
+                <input asp-for="apMaterno" type="text" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="apMaterno" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Empresa</label>
+                <input asp-for="empresa" type="email" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="empresa" class="text-danger"></span>
+            </div>
+            <div class="alert alert-danger" role="alert">
+                ¿Seguro que deseas eliminar al cliente: @Html.DisplayTextFor(m=>m.nombre) @Html.DisplayTextFor(m=>m.apPaterno) @Html.DisplayTextFor(m=>m.apMaterno)?
+            </div>
+            <button type="submit" class="btn btn-danger"><i class="bi bi-trash3"></i>  Eliminar</button>
+        </form>
+    </div>
+</div>

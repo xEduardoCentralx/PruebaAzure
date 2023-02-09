@@ -1,0 +1,115 @@
+﻿@model List<Empleado>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*
+    En esta vista, solo el administrador podrá agregar a nuevos empleados ademas de hacer modificaciones o eliminaciones en la base
+    El super usuario podrá agregar o editar los empleados
+    El empleado solo podra visualizar sus datos como Id, nombre y apellido
+    El acceso a todas las vistas de encuentra restringido a uso de roles.
+*@
+<div class="card">
+    <div class="card-header">
+        <h3>Empleados</h3>
+    </div>
+    @if (User.IsInRole("Administrador"))
+    {
+        <div class="card-body">
+            <a asp-action="Guardar" asp-controller="Mantenedor" class="btn btn-success"><i class="bi bi-plus-circle"></i> Registrar nuevo empleado</a>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido paterno</th>
+                        <th>Apellido materno</th>
+                        <th>Correo</th>
+                        <th>Rol</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Usamos el foreach para poder integrar todos los datos del modelo  -->
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.IdEmpleado</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.ApPaterno</td>
+                            <td>@item.ApMaterno</td>
+                            <td>@item.Correo</td>
+                            <td>@item.Rol</td>
+                            <td>
+                                <a asp-action="Editar" asp-controller="Mantenedor" class="btn btn-warning" asp-route-id="@item.IdEmpleado"><i class="bi bi-pencil"></i> Editar</a>
+                                <a asp-action="Eliminar" asp-controller="Mantenedor" class="btn btn-danger" asp-route-id="@item.IdEmpleado"><i class="bi bi-trash3"></i> Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    @if (User.IsInRole("Super usuario"))
+    {
+        <div class="card-body">
+            <a asp-action="Guardar" asp-controller="Mantenedor" class="btn btn-success"><i class="bi bi-plus-circle"></i> Registrar nuevo empleado</a>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido paterno</th>
+                        <th>Apellido materno</th>
+                        <th>Correo</th>
+                        <th>Rol</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Usamos el foreach para poder integrar todos los datos del modelo  -->
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.IdEmpleado</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.ApPaterno</td>
+                            <td>@item.ApMaterno</td>
+                            <td>@item.Correo</td>
+                            <td>@item.Rol</td>
+                            <td>
+                                <a asp-action="Editar" asp-controller="Mantenedor" class="btn btn-warning" asp-route-id="@item.IdEmpleado"><i class="bi bi-pencil"></i> Editar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    @if (User.IsInRole("Empleado"))
+    {
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido paterno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Usamos el foreach para poder integrar todos los datos del modelo  -->
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.IdEmpleado</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.ApPaterno</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+

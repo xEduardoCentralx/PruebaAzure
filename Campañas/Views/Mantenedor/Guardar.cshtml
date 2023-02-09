@@ -1,0 +1,52 @@
+﻿@model Empleado
+@{
+    ViewData["Title"] = "Guardar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Nuevo empleado</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="Guardar" asp-controller="Mantenedor" method="post">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="Nombre" type="text" class="form-control">
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido paterno</label>
+                <input asp-for="ApPaterno" type="text" class="form-control">
+                <span asp-validation-for="ApPaterno" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido materno</label>
+                <input asp-for="ApMaterno" type="text" class="form-control">
+                <span asp-validation-for="ApMaterno" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input asp-for="Correo" type="email" class="form-control">
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input asp-for="Contra" type="password" class="form-control">
+                <span asp-validation-for="Contra" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Rol</label>
+                <span asp-validation-for="Rol" class="text-danger"></span>
+            <select class="form-select" asp-for="Rol">
+                <option selected>---</option>
+                <option value="Administrador">Administrador</option>
+                <option value="Super usuario">Super usuario</option>
+                <option value="Empleado">Empleado</option>
+            </select>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear cuenta</button>
+        </form>
+    </div>
+</div>
+

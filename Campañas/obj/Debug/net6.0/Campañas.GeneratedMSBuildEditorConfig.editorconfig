@@ -1,0 +1,181 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Campañas
+build_property.RootNamespace = Campañas
+build_property.ProjectDir = C:\Users\sieno\source\repos\CampañasTrabajo\Campañas\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\sieno\source\repos\CampañasTrabajo\Campañas
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Cliente/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Cliente/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFbGltaW5hci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Cliente/Guardar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxHdWFyZGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Cliente/Listar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxMaXN0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Inicio/InicioSesion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvXEluaWNpb1Nlc2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Mantenedor/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuZWRvclxFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Mantenedor/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuZWRvclxFbGltaW5hci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Mantenedor/Guardar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuZWRvclxHdWFyZGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Mantenedor/Listar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuZWRvclxMaXN0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Marca/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Marca/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcRWxpbWluYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Marca/Guardar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcR3VhcmRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Marca/Listar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcTGlzdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Movimiento/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aW1pZW50b1xFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Movimiento/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aW1pZW50b1xFbGltaW5hci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Movimiento/Guardar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aW1pZW50b1xHdWFyZGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Movimiento/Listar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aW1pZW50b1xMaXN0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Pago/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Pago/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xFbGltaW5hci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Pago/Guardar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xHdWFyZGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Pago/Listar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xMaXN0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/PAjustado/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEFqdXN0YWRvXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/PAjustado/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEFqdXN0YWRvXEVsaW1pbmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/PAjustado/Guardar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEFqdXN0YWRvXEd1YXJkYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/PAjustado/Listar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUEFqdXN0YWRvXExpc3Rhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/PContrato/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUENvbnRyYXRvXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/PContrato/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUENvbnRyYXRvXEVsaW1pbmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/PContrato/Guardar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUENvbnRyYXRvXEd1YXJkYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/PContrato/Listar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUENvbnRyYXRvXExpc3Rhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/PDerogado/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUERlcm9nYWRvXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/PDerogado/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUERlcm9nYWRvXEVsaW1pbmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/PDerogado/Guardar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUERlcm9nYWRvXEd1YXJkYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/PDerogado/Listar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUERlcm9nYWRvXExpc3Rhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Presupuestos/Listado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3VwdWVzdG9zXExpc3RhZG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sieno/source/repos/CampañasTrabajo/Campañas/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-9x1hw6i9vw

@@ -1,0 +1,91 @@
+﻿@model List<MarcaModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*
+    El administrador podrá hacer cualquier tipo de movimiento (Crear, editar o eliminar)
+    El super usuario al igual que el empleado se le eliminará el derecho de poder eliminars
+*@
+
+<div class="card">
+    <div class="card-header">
+        <h3>Marcas</h3>
+    </div>
+    @if (User.IsInRole("Administrador"))
+    {
+        <div class="card-body">
+            <a asp-action="Guardar" asp-controller="Marca" class="btn btn-success"><i class="bi bi-plus-circle"></i> Crear nueva marca</a>
+            <hr />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre de la marca</th>
+                        <th>Tipo de movimiento</th>
+                        <th>Fecha de movimiento</th>
+                        <th>Id del cliente</th>
+                        <th>Id del empleado</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.idMarca</td>
+                            <td>@item.nombre</td>
+                            <td>@item.tipo</td>
+                            <td>@item.fecha</td>
+                            <td>@item.idCliente</td>
+                            <td>@item.idEmpleado</td>
+                            <td>
+                                <a asp-action="Editar" asp-controller="Marca" class="btn btn-warning" asp-route-id="@item.idMarca"><i class="bi bi-pencil"></i> Editar</a>
+                                <a asp-action="Eliminar" asp-controller="Marca" class="btn btn-danger" asp-route-id="@item.idMarca"><i class="bi bi-trash3"></i> Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    }
+    @if (User.IsInRole("Super usuario, Empleado"))
+    {
+        <div class="card-body">
+            <a asp-action="Guardar" asp-controller="Marca" class="btn btn-success"><i class="bi bi-plus-circle"></i> Crear nueva marca</a>
+            <hr />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre de la marca</th>
+                        <th>Tipo de movimiento</th>
+                        <th>Fecha de movimiento</th>
+                        <th>Id del cliente</th>
+                        <th>Id del empleado responsable</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.idMarca</td>
+                            <td>@item.nombre</td>
+                            <td>@item.tipo</td>
+                            <td>@item.fecha</td>
+                            <td>@item.idCliente</td>
+                            <td>@item.idEmpleado</td>
+                            <td>
+                                <a asp-action="Editar" asp-controller="Marca" class="btn btn-warning" asp-route-id="@item.idMarca"><i class="bi bi-pencil"></i> Editar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    }
+</div>
+

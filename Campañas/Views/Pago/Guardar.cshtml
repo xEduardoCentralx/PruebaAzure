@@ -1,0 +1,20 @@
+﻿@model PagoModel
+@{
+    ViewData["Title"] = "Guardar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h3>Nuevo metodo de pago</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="Guardar" asp-controller="Pago" method="post">
+            <div class="mb-3">
+                <label class="form-label">Metodo de pago</label>
+                <input asp-for="nombre" type="text" class="form-control">
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear nuevo metodo de pago</button>
+        </form>
+    </div>
+</div>
+

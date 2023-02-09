@@ -1,0 +1,197 @@
+﻿
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //double? total;
+    List<Campañas.Models.Movimiento> movimiento = ViewBag.Movimiento;
+}
+@*
+    Aqui, como en todas las vistas, el administrador tendrá el poder de modificar todos los movimientos
+    El super usuario podrá agregar, o editar pero no eliminar
+    El empleado solo podrá agregar movimientos
+*@
+
+@*Checar lo del total*@
+
+<div class="card">
+    <div class="card-header">
+        <h3>Movimientos de las marcas</h3>
+    </div>
+    @if(User.IsInRole("Administrador")){
+        <div class="card-body ">
+            <a asp-action="Guardar" asp-controller="Movimiento" class="btn btn-success"><i class="bi bi-plus-circle"></i> Nuevo movimiento</a>
+            <br />
+            <style>
+                .table_wrapper {
+                    display: block;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                }
+            </style>
+            <table class="table_wrapper table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id del Movimiento</th>
+                        <th>Número de factura </th>
+                        <th>Nota de credito</th>
+                        <th>Mes</th>
+                        <th>Concepto</th>
+                        <th>Gasto</th>
+                        <th>Impuestos</th>
+                        <th>Total</th>
+                        <th>Tipo de movimiento</th>
+                        <th>Fecha del movimiento</th>
+                        <th>Id de la marca perteneciente</th>
+                        <th>Id del metodo de pago</th>
+                        <th>Id del empleado responsable</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Usamos el foreach para poder integrar todos los datos del modelo  -->
+                    @foreach (var item in movimiento)
+                    {
+                        @*total = 0;
+                        total = total + item.Gasto + item.Impuestos;*@
+                        <tr>
+                            <td>@item.IdMovimiento</td>
+                            <td>@item.Factura</td>
+                            <td>@item.NotaCredito</td>
+                            <td>@item.Mes</td>
+                            <td>@item.Concepto</td>
+                            <td>@item.Gasto</td>
+                            <td>@item.Impuestos</td>
+                            @*<td>@total</td>*@
+                            <td>@item.Tipo</td>
+                            <td>@item.Fecha</td>
+                            <td>@item.IdMarca</td>
+                            <td>@item.IdPago</td>
+                            <td>@item.IdEmpleado</td>
+                            <td>
+                                <a asp-action="Editar" asp-controller="Movimiento" class="btn btn-warning" asp-route-id="@item.IdMovimiento"><i class="bi bi-pencil"></i> Editar</a>
+                                <a asp-action="Eliminar" asp-controller="Movimiento" class="btn btn-danger" asp-route-id="@item.IdMovimiento"><i class="bi bi-trash3"></i> Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+@*    @if (User.IsInRole("Super usuario"))
+    {
+        <div class="card-body ">
+            <a asp-action="Guardar" asp-controller="Movimiento" class="btn btn-success"><i class="bi bi-plus-circle"></i> Nuevo movimiento</a>
+            <br />
+            <style>
+                .table_wrapper {
+                    display: block;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                }
+            </style>
+            <table class="table_wrapper table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id del Movimiento</th>
+                        <th>Número de factura </th>
+                        <th>Nota de credito</th>
+                        <th>Mes</th>
+                        <th>Concepto</th>
+                        <th>Gasto</th>
+                        <th>Impuestos</th>
+                        <th>Total</th>
+                        <th>Tipo de movimiento</th>
+                        <th>Fecha del movimiento</th>
+                        <th>Id de la marca perteneciente</th>
+                        <th>Id del metodo de pago</th>
+                        <th>Id del empleado responsable</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Usamos el foreach para poder integrar todos los datos del modelo  -->
+                    @foreach (var item in Model)
+                    {
+                        total = total + item.gasto + item.impuestos;
+                        <tr>
+                            <td>@item.idMovimiento</td>
+                            <td>@item.factura</td>
+                            <td>@item.notaCredito</td>
+                            <td>@item.mes</td>
+                            <td>@item.concepto</td>
+                            <td>@item.gasto</td>
+                            <td>@item.impuestos</td>@*
+                            <td>@total</td>
+                            <td>@item.tipo</td>
+                            <td>@item.fecha</td>
+                            <td>@item.idMarca</td>
+                            <td>@item.idPago</td>
+                            <td>@item.idEmpleado</td>
+                            <td>
+                                <a asp-action="Editar" asp-controller="Movimiento" class="btn btn-warning" asp-route-id="@item.idMovimiento"><i class="bi bi-pencil"></i> Editar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }*@
+    @*if (User.IsInRole("Empleado"))
+    {
+        <div class="card-body ">
+            <a asp-action="Guardar" asp-controller="Movimiento" class="btn btn-success"><i class="bi bi-plus-circle"></i> Nuevo movimiento</a>
+            <br />
+            <style>
+                .table_wrapper {
+                    display: block;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                }
+            </style>
+            <table class="table_wrapper table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id del Movimiento</th>
+                        <th>Número de factura </th>
+                        <th>Nota de credito</th>
+                        <th>Mes</th>
+                        <th>Concepto</th>
+                        <th>Gasto</th>
+                        <th>Impuestos</th>
+                        <th>Total</th>
+                        <th>Tipo de movimiento</th>
+                        <th>Fecha del movimiento</th>
+                        <th>Id de la marca perteneciente</th>
+                        <th>Id del metodo de pago</th>
+                        <th>Id del empleado responsable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Usamos el foreach para poder integrar todos los datos del modelo  -->
+                    @foreach (var item in Model)
+                    {
+                        total = total + item.gasto + item.impuestos;
+                        <tr>
+                            <td>@item.idMovimiento</td>
+                            <td>@item.factura</td>
+                            <td>@item.notaCredito</td>
+                            <td>@item.mes</td>
+                            <td>@item.concepto</td>
+                            <td>@item.gasto</td>
+                            <td>@item.impuestos</td>
+                            <td>@total</td>
+                            <td>@item.tipo</td>
+                            <td>@item.fecha</td>
+                            <td>@item.idMarca</td>
+                            <td>@item.idPago</td>
+                            <td>@item.idEmpleado</td>
+                            
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }*@
+</div>
+
+

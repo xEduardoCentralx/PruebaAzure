@@ -1,0 +1,26 @@
+﻿@model PDerogadoModel
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h1>Eliminar herramienta</h1>
+    </div>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="PDerogado" method="post">
+            <input asp-for="idHerramienta" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Herramienta</label>
+                <input asp-for="Herramienta" type="text" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="Herramienta" class="text-danger"></span>
+            </div>
+            <div class="alert alert-danger" role="alert">
+                ¿Seguro que deseas eliminar la herramienta: @Html.DisplayTextFor(m=>m.Herramienta)?
+            </div>
+            <button type="submit" class="btn btn-danger"><i class="bi bi-trash3"></i>  Eliminar</button>
+        </form>
+    </div>
+</div>
+
+

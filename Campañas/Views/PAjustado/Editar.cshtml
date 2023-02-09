@@ -1,0 +1,88 @@
+﻿@model PAjustadoModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h1>Editar presupuesto</h1>
+    </div>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="PAjustado" method="post">
+            <input asp-for="idHerramienta" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Herramienta nueva</label>
+                <input asp-for="Herramienta" type="text" class="form-control" readonly>
+                <span asp-validation-for="Herramienta" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Enero</label>
+                <input asp-for="Enero" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="Enero" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Febrero</label>
+                <input asp-for="Febrero" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="Febrero" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Marzo</label>
+                <input asp-for="Marzo" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="Marzo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Abril</label>
+                <input asp-for="Abril" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="Abril" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Mayo</label>
+                <input asp-for="Mayo" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="Mayo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Junio</label>
+                <input asp-for="Junio" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="Junio" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Julio</label>
+                <input asp-for="Julio" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="Julio" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Agosto</label>
+                <input asp-for="Agosto" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="Agosto" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Septiembre</label>
+                <input asp-for="Septiembre" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="Septiembre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Octubre</label>
+                <input asp-for="Octubre" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="Octubre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Noviembre</label>
+                <input asp-for="Noviembre" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="Noviembre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Diciembre</label>
+                <input asp-for="Diciembre" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="Diciembre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">S. Evento</label>
+                <input asp-for="SEvento" type="number" step="0.0001" class="form-control">
+                <span asp-validation-for="SEvento" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Actualizar herramienta</button>
+        </form>
+    </div>
+</div>
+
+

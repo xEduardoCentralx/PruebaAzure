@@ -1,0 +1,70 @@
+﻿@model MovimientoModel
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h3>Eliminar empleado</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="Movimiento" method="post">
+            <input asp-for="idMovimiento" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">No. de factura</label>
+                <input asp-for="factura" type="text" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="factura" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nota de credito</label>
+                <input asp-for="notaCredito" type="text" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="notaCredito" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Mes</label>
+                <input asp-for="mes" type="text" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="mes" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Concepto</label>
+                <input asp-for="concepto" type="text" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="concepto" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Gasto</label>
+                <input asp-for="gasto" type="number" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="gasto" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Impuestos</label>
+                <input asp-for="impuestos" type="number" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="impuestos" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha</label>
+                <input asp-for="fecha" type="datetime-local" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="fecha" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Id de la marca correspondiente</label>
+                <input asp-for="idMarca" type="number" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="idMarca" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Id del metodo de pago</label>
+                <input asp-for="idPago" type="number" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="idPago" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ingresa tu id</label>
+                <input asp-for="idEmpleado" type="number" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="idEmpleado" class="text-danger"></span>
+            </div>
+            <div class="alert alert-danger" role="alert">
+                ¿Seguro que deseas eliminar este movimiento?
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Eliminar movimiento</button>
+        </form>
+    </div>
+</div>
+

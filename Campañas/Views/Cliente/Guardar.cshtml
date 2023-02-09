@@ -1,0 +1,54 @@
+﻿@model ClienteModel
+@{
+    ViewData["Title"] = "Guardar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h3>Nuevo cliente</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="Guardar" asp-controller="Cliente" method="post">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="nombre" type="text" class="form-control">
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido paterno</label>
+                <input asp-for="apPaterno" type="text" class="form-control">
+                <span asp-validation-for="apPaterno" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido materno</label>
+                <input asp-for="apMaterno" type="text" class="form-control">
+                <span asp-validation-for="apMaterno" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Empresa</label>
+                <input asp-for="empresa" type="text" class="form-control">
+                <span asp-validation-for="empresa" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tipo de movimiento</label>
+                <span asp-validation-for="tipo" class="text-danger"></span>
+                <select class="form-select" asp-for="tipo">
+                    <option selected>---</option>
+                    <option value="Creacion">Creacion de nuevo cliente</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha de creacion</label>
+                <input asp-for="fecha" type="date" class="form-control">
+                <span asp-validation-for="fecha" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ingresa tu id</label>
+                <input asp-for="idEmpleado" type="number" class="form-control">
+                <span asp-validation-for="idEmpleado" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear usuario</button>
+        </form>
+    </div>
+</div>
+

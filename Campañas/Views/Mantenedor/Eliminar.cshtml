@@ -1,0 +1,50 @@
+﻿@model Empleado
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h3>Eliminar empleado</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="Mantenedor" method="post">
+            <input asp-for="IdEmpleado" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="Nombre" type="text" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido paterno</label>
+                <input asp-for="ApPaterno" type="text" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="ApPaterno" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido materno</label>
+                <input asp-for="ApMaterno" type="text" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="ApMaterno" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input asp-for="Correo" type="email" class="form-control" aria-label="Disabled input example" disabled>
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Rol</label>
+                <span asp-validation-for="Rol" class="text-danger"></span>
+                <select class="form-select" asp-for="Rol" aria-label="Disabled input example" disabled>
+                    <option selected>---</option>
+                    <option value="Super usuario">Super usuario</option>
+                    <option value="Administrativo">Administrativo</option>
+                    <option value="Empleado">Empleado</option>
+                </select>
+            </div>
+            <div class="alert alert-danger" role="alert">
+                ¿Seguro que deseas eliminar al empleado: @Html.DisplayTextFor(m=>m.Nombre) @Html.DisplayTextFor(m=>m.ApPaterno) @Html.DisplayTextFor(m=>m.ApMaterno)?
+            </div>
+            <button type="submit" class="btn btn-danger"><i class="bi bi-trash3"></i>  Eliminar</button>
+        </form>
+    </div>
+</div>
+
